@@ -30,7 +30,7 @@ const Aboutus=()=>{
     
             
            
-            <Image source={require('../../assets/education.jpg')} style={aboutStyle.imgStyle2}/>
+          
             </View>
             </View> </View><br/><br/> */}
             <View style={aboutStyle.fullAboutView}>

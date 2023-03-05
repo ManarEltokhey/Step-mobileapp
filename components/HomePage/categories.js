@@ -61,8 +61,8 @@ const ExerciseHomeScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, position: 'relative'}}>
-      <h1 style={{marginTop: 20, textAlign: 'center', fontSize: 30,color:'#010149'}}>Top categories</h1>
+    <SafeAreaView style={{flex: 1,position:'relative'}}>
+      <Text style={{marginTop: 20, textAlign: 'center', fontSize: 30,color:'#010149'}}>Top categories</Text>
         <View
           style={{
             flexDirection: 'row',
@@ -78,7 +78,7 @@ const ExerciseHomeScreen = () => {
             }}>
             <View
               style={{
-                height: 3,
+                // height: 3,
                 backgroundColor: COLORS.white,
                 width: '40%',
                 marginBottom: 8,
@@ -86,7 +86,7 @@ const ExerciseHomeScreen = () => {
               }}></View>
             <View
               style={{
-                height: 3,
+                // height:3 ,
                 backgroundColor: COLORS.white,
                 width: '40%',
                 marginLeft: 5,
