@@ -1,7 +1,6 @@
 import React, { useState ,useEffect} from "react"
 import { SectionList, StatusBar } from "react-native";
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View,Image,FlatList} from "react-native"
-import { Button } from "react-native-paper";
 const ListItem=({item})=>{
     return(
       <View style={styles.item}>
