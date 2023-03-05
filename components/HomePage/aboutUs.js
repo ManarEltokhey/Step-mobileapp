@@ -52,9 +52,9 @@ const Aboutus=()=>{
         <MaterialCommunityIcons name="linkedin" color={"#010149"} size={30}  onPress={() => Linking.openURL('https://www.linkedin.com/')}/>
         </View>
             </View>
-            <View style={aboutStyle.imgViewStyle}>
-            <Image source={require('../../assets/education.jpg')} style={aboutStyle.imgStyle2}/>
-            </View>
+            {/* <View style={aboutStyle.imgViewStyle}>
+         
+            </View> */}
             </View>
             <br/>
         </>

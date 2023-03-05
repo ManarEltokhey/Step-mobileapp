@@ -29,18 +29,21 @@ export default StyleSheet.create({
   aboutView:{
     display:'flex',
    flexDirection:'column',
-   marginTop:'10px'
+   marginTop:'10px',
+   width:'100%'
   },
   fullAboutView:{
     display:'flex',
     flexDirection:'row',
     justifyContent: "space-evenly",
-    marginTop:'20px'
+    marginTop:'20px',
+    width:'100%'
    
   },
   paragraph:{
-    width:'500px',
-    marginLeft:'50px',
+    width:'100%',
+   margin:'auto',
+   padding:'10px',
     fontSize:'17px'
   },
   buttonStyle:{
