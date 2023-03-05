@@ -4,13 +4,14 @@ import Aboutus from './components/HomePage/aboutUs';
 
 import Carousel from './components/HomePage/carousel';
 import ExerciseHomeScreen from './components/HomePage/categories';
+import CoursrsSection from './components/HomePage/Courses';
+import HomeSection from './components/HomePage/home';
 export default function App() {
   return (
     <View>
-      <ExerciseHomeScreen/>
-     {/* <Aboutus/>  */}
-    
-      <StatusBar style="auto" />
+      <Aboutus/> 
+       <ExerciseHomeScreen/> 
+{/* <HomeSection/> */}
     </View>
   );
 }
