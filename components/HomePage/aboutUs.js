@@ -1,8 +1,7 @@
 import React from "react"
 import {Text, View ,Image} from "react-native";
-import { Button } from 'react-native-paper';
 import aboutStyle from "./aboutUsStyle.js";
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const Aboutus=()=>{
     return(
         <> 
@@ -42,9 +41,9 @@ const Aboutus=()=>{
             We train, qualify and enable the teacher to teach the new curriculum edu 2.0 by providing the teacher with courses, books and articles by experts in the field and also professional curriculums through our platform that will be always available for him. and give him certificates by the end of each course that will be added points to give him rewards and boosters
             </Text>
             <br/>
-            <Button  mode="contained" onPress={() => console.log('Pressed')} style={aboutStyle.buttonStyle}>
+            {/* <Button  mode="contained" onPress={() => console.log('Pressed')} style={aboutStyle.buttonStyle}>
             Get started
-  </Button>
+  </Button> */}
   <View style={aboutStyle.icon}>
       <MaterialCommunityIcons name="facebook" color={"#010149"} size={30} onPress={() => Linking.openURL('https://www.facebook.com/')} />
         <MaterialCommunityIcons name="twitter" color={"#010149"} size={30} onPress={() => Linking.openURL('https://www.twitter.com/')} />
