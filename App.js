@@ -6,12 +6,14 @@ import CoursrsSection from './components/HomePage/Courses';
 import CourseSwiper from './components/HomePage/CourseSwiper';
 import DataList from './components/HomePage/Data';
 import HomeSection from './components/HomePage/home';
+import BookPage from './pages/bookspage';
 export default function App() {
   return (
-    <View style={{width:'412px'}}>
+    <View style={{width:'420px'}}>
       <Aboutus/> 
  <CourseSwiper/>
  <ExerciseHomeScreen/>  
+<BookPage/>
     </View>
   );
 }

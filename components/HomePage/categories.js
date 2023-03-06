@@ -78,7 +78,7 @@ const ExerciseHomeScreen = () => {
             }}>
             <View
               style={{
-                // height: 3,
+                height: 3,
                 backgroundColor: COLORS.white,
                 width: '40%',
                 marginBottom: 8,
@@ -86,7 +86,7 @@ const ExerciseHomeScreen = () => {
               }}></View>
             <View
               style={{
-                // height:3 ,
+                height:3 ,
                 backgroundColor: COLORS.white,
                 width: '40%',
                 marginLeft: 5,
