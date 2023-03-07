@@ -9,9 +9,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Icon } from '@rneui/themed';
-import { Button, IconButton } from 'react-native-paper';
-import { useEffect } from 'react';
 
 export default function App() {
   const Tab = createBottomTabNavigator();
