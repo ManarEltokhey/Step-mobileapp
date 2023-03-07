@@ -1,29 +1,62 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Aboutus from './components/HomePage/aboutUs';
-import ExerciseHomeScreen from './components/HomePage/categories';
-import CoursrsSection from './components/HomePage/Courses';
-import CourseSwiper from './components/HomePage/CourseSwiper';
-import DataList from './components/HomePage/Data';
-import HomeSection from './components/HomePage/home';
-import BookPage from './pages/bookspage';
+import HomeSection from './pages/home';
+import { NavigationContainer } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import DETAILS from './components/veiwcourses/details';
+import FAVOURITE from './components/veiwcourses/favourite';
+import LOGIN from './components/veiwcourses/login';
+import { Provider } from 'react-redux';
+import { store } from './store/Store';
+import LIST from './components/veiwcourses/list';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Icon } from '@rneui/themed';
+import { Button, IconButton } from 'react-native-paper';
+import { useEffect } from 'react';
+
 export default function App() {
+  const Tab = createBottomTabNavigator();
   return (
-    <View style={{width:'420px'}}>
-      <Aboutus/> 
- <CourseSwiper/>
- <ExerciseHomeScreen/>  
-<BookPage/>
-    </View>
+    <Provider store={store}>
+    <NavigationContainer >
+      
+    <Tab.Navigator>
+   
+  <Tab.Screen name="HomePage" component={HomeSection} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={'#010149'} size={size} />
+        ),
+      }}/>
+      <Tab.Screen name="home" component={LIST} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="book" color={'#010149'} size={size} />
+        ),
+      }}/>
+      <Tab.Screen name="login" component={LOGIN} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+           <MaterialCommunityIcons name="inbox" color={'#010149'} size={size} />
+        ),
+      }}/>
+      <Tab.Screen name="details" component={DETAILS} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
+        ),
+      }}/>
+      <Tab.Screen name="favourite" component={FAVOURITE} options={{
+    tabBarLabel: '',
+    //  tabBarBadge: '' ,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
+        ),
+      }}/>
+   
+  </Tab.Navigator></NavigationContainer></Provider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-  flex:1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width:'200px'
-  },
+  
 });

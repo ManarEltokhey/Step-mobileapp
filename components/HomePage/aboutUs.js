@@ -3,6 +3,7 @@ import {Text, View ,Image} from "react-native";
 import aboutStyle from "./aboutUsStyle.js";
  import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const Aboutus=()=>{
+  
     return(
         <> 
         {/* <View style={aboutStyle.fullAboutView} >
