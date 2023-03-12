@@ -11,6 +11,8 @@ import {
   ImageBackground
 } from 'react-native';
 import AutoScroll from "@homielab/react-native-auto-scroll";
+// import { Carousel } from 'react-native-auto-carousel';
+import { Carousel } from 'react-carousel-minimal';
 
 const DEVICE_WIDTH = Dimensions.get('window').width;
 const Images = [
@@ -18,7 +20,29 @@ const Images = [
   "https://firebasestorage.googleapis.com/v0/b/lotapp-9e84d.appspot.com/o/fan.jpg?alt=media&token=b419d507-9de8-4c4c-97e3-6b4eb2202e68",
   "https://firebasestorage.googleapis.com/v0/b/lotapp-9e84d.appspot.com/o/stone.jpg?alt=media&token=e9d41537-7f26-4bfd-86eb-c2ef6fc58a9c"
 ];
+const data = [
+  {
+    image: require('../../assets/bg.jpg'),
+    caption:'When one teaches, Two learn'
+  },
+  {
+    image: require('../../assets/bg1.jpg'),
+    caption: 'When one teaches, Two learn'
+  },
+  {
+    image: require('../../assets/bg2.jpg'),
+    caption: 'When one teaches, Two learn'
+  },
+];
 
+const captionStyle = {
+  fontSize: '2em',
+  fontWeight: 'bold',
+}
+const slideNumberStyle = {
+  fontSize: '20px',
+  fontWeight: 'bold',
+}
 
 const CarouselSection =()=>{
   // const [data, setData] = useState(
@@ -70,7 +94,7 @@ const CarouselSection =()=>{
         
             )} */}
  
-  <AutoScroll style={{width:'100%' }} endPaddingWidth={10}>
+  {/* <AutoScroll style={{width:'100%' }} endPaddingWidth={10}>
    <View style={styles.container}>
    <View
           delay={610}
@@ -109,9 +133,45 @@ const CarouselSection =()=>{
          
 
            
-  </AutoScroll>
-   
-               </>
+  </AutoScroll> */}
+   {/* <Carousel>
+    <Text>jjjj</Text>
+   </Carousel> */}
+              
+                   <div className="App">
+                   <div style={{ textAlign: "center" }}>
+                     <div style={{
+                       padding: "0 20px"
+                     }}>
+                       <Carousel
+                         data={data}
+                         time={2000}
+                         width="850px"
+                         height="500px"
+                         captionStyle={captionStyle}
+                         radius="10px"
+                        //  slideNumber={true}
+                        //  slideNumberStyle={slideNumberStyle}
+                         captionPosition="bottom"
+                         automatic={true}
+                         dots={true}
+                         pauseIconColor="white"
+                         pauseIconSize="40px"
+                         slideBackgroundColor="darkgrey"
+                         slideImageFit="cover"
+                        //  thumbnails={true}
+                        //  thumbnailWidth="100px"
+                        //  style={{
+                        //    textAlign: "center",
+                        //    maxWidth: "850px",
+                        //    maxHeight: "500px",
+                        //    margin: "40px auto",
+                        //  }}
+                       />
+                     </div>
+                   </div>
+                 </div>
+                 </>
     )
 }
 
