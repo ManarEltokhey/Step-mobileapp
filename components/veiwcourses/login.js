@@ -1,96 +1,90 @@
-import React, { useState } from "react";
-import { Text ,Image } from "react-native-elements";
-import { Formik, Field } from 'formik' ;
-import * as yup from 'yup';
-import { TextInput ,StyleSheet, Button, TouchableOpacity  } from "react-native-web";
-import { View } from "react-native";
-export default function LOGIN({navigation}) {
-return(
-
-    <>
-    <Formik
-        initialValues={{ username: '', password: '' }}
-         validationSchema ={
-        yup.object({
-        username:yup.string().required("required").min(8,"must be 8 characters or more")
-     , password:yup.string().required("required").min(8,"must be 8 characters or more")
-       })
-             }
-            >
-
-{
-    props=>(
-        <View style={styles.loginContainer}>
-                 <Image  style={styles.logo} source={require('../../assets/pexels-pixabay-220326.jpg')} />
-
-        <TextInput
-        name="username"
-        placeholder="User name"
-        style={styles.textInput}
-        onChangeText={props.handleChange('username')}
-        onBlur={props.handleBlur('username')}
-      />
+import React, { useReducer, useState } from "react";
+import { Button, Text, TextInput, View } from "react-native";
+import { colors } from "react-native-elements";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { Link } from "@react-navigation/native";
+import { StyleSheet } from "react-native";
+function Login(){
+    const [Email,setEmail]=useState('');
+    const [userPass,setuserPass]=useState('');
+    const [Error,setError]=useState("")
+    const [x,setX]=useState(0);
+    const [EmailErr,setEmailErr]=useState("");
+    const [PassErr,setPassErr]=useState("");
+    const handleSubmit=async(e)=>{
          
-      {props.touched.username && props.errors.username ?(
-    <Text style={{color:"red"}}> {props.errors.username}
-    </Text>
-):null}
-             <TextInput
-                  name="password"
-                  placeholder="Password"
-                  style={styles.textInput}
-                  onChangeText={props.handleChange('password')}
-                  onBlur={props.handleBlur('password')}
+        console.log(e.target)
+       if( Email.length==0  )
+       {
+        setEmailErr("This Field is Required")
+       }
+      if(/.+@.+\.[A-Za-z]+$/.test(Email))
+      {
+        setEmailErr(" ")
+      }
+      else(
+        setEmailErr("invalid")
+      )
+    
+       if(userPass.length==0)
+        {
+            setPassErr("Password is required")
+        }
+       else if(userPass.length<8 )
+        {
+            setPassErr("Password must be more than 8char")
+        }
+        else{
+            setPassErr("")
+        }
         
-                 
-                />
-                      {props.touched.password && props.errors.password ?(
-    <Text  style={{color:"red"}} > {props.errors.password}
-    </Text>
-):null}
+          e.preventDefault()
+         
+          try {
+            const user = await signInWithEmailAndPassword(auth,Email,userPass);
+            console.log(user.user);
+            setX(1)
+         }
+          
+         catch(err){
+          console.log(err.message)
+          if(err.message=="Firebase: Error (auth/wrong-password).")
+          {
+            setError( "password invalid")
+            setX(0)
+          }
+          else  
+          {
+            setError( "this email not found")
+            setX(0)
+          }
+           
+        }
+        
 
-<TouchableOpacity style={styles.submit}   onPress= {()=>{ !props.errors.password && !props.errors.username  ?  navigation.navigate("home") :props.handleSubmit}} > submit</TouchableOpacity>
-
-</View>
-    )   
-}
-</Formik>
-    </>
-)
-}
-
-
+    }
+ 
   
-const styles = StyleSheet.create({
-submit:{backgroundColor:"darkcyan" ,        borderRadius:"5px"
-,color:"white"  ,  width:"200px" , textAlign:"center" ,margin:"auto",marginTop:"10px" ,height:"40px" ,fontSize:30 ,fontWeight:"bold" },
- logo:{
-        width:'300px' ,
-        height:"250px" ,
-        paddingTop:"100px",
-        margin:"auto"  ,
-        borderRadius:"5px"
-    
-     },
-
-    loginContainer: {
-      width: '100%',
-    
-      backgroundColor: 'powderblue',
-      padding: 10,
-      elevation: 10,
-      height:"700px"
-
-    },
-    textInput: {
-      height: 40,
-      width: '80%',
-      margin: "auto",
-      marginTop:"2px" ,
-      marginBottom:"2px" ,
-      backgroundColor: 'lightpink',
-      borderColor: 'gray',
-      borderWidth: StyleSheet.hairlineWidth,
-      borderRadius: 10,
-    },
-  })
+    return(
+        <>
+        <View style={{width:"100%",alignItems:"center",backgroundColor:"white",height:'100vh' }} >
+          <Text style={{fontSize:"30px" ,fontWeight:"bold", color:"#2B3467"}}>LOGIN</Text>
+            <TextInput  
+             onChangeText={(txt=>setEmail(txt))}    style={[{width:'50%' , backgroundColor:"#b3d1ff", padding:10,margin:10, color:"black"  ,marginTop:50}  ]}  placeholder="Enter Username"></TextInput>
+            <Text style={{color:'red'}}>{EmailErr}</Text>
+            <TextInput onChangeText={(txt=>setuserPass(txt))} style={{width:'50%',padding:10  , backgroundColor:"#b3d1ff",margin:10 ,color:"black",marginTop:30}} placeholder="Enter Password" secureTextEntry={true}></TextInput>
+            <Text style={{color:'red'}}>{PassErr}</Text>
+            <View style={{marginTop:20,width:"20%"}}>
+            <Button title="Login" color={"#13005A"}   onPress={(e)=>handleSubmit(e)}></Button>
+            </View>
+            {x==0&&Email!=''?<Text style={{color:"red"}}>{Error}</Text>:null}
+            { x==1&& Email!='' ?<Text  style={{color:"green"}} >login is success </Text>:null} 
+        </View>
+        </>
+    )
+}
+const styles=StyleSheet.create({
+  
+})
+export default Login;

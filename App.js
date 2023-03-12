@@ -9,6 +9,16 @@ import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+<<<<<<< HEAD
+import { Icon } from '@rneui/themed';
+import { Button, IconButton } from 'react-native-paper';
+import { useEffect } from 'react';
+import Page1 from './components/veiwcourses/Sign_up/SignUp';
+import test from './components/veiwcourses/Sign_up/testing';
+import Login from './components/veiwcourses/login';
+import NativeComponentEmailInput from './components/veiwcourses/Sign_up/testing';
+=======
+>>>>>>> main
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -30,10 +40,16 @@ export default function App() {
           <MaterialCommunityIcons name="book" color={'#010149'} size={size} />
         ),
       }}/>
-      <Tab.Screen name="login" component={LOGIN} options={{
+      <Tab.Screen name="register" component={Page1} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
            <MaterialCommunityIcons name="inbox" color={'#010149'} size={size} />
+        ),
+      }}/>
+        <Tab.Screen name="login" component={Login} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+           <MaterialCommunityIcons name="login" color={'#010149'} size={size} />
         ),
       }}/>
       <Tab.Screen name="details" component={DETAILS} options={{
