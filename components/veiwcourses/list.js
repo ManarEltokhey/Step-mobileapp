@@ -66,7 +66,7 @@ else  {
   
         return(<>
         <Card key={ele.id} style={{width:"200px"  }}>
-     <Image  style={styles.logo} source={{uri:ele.volumeInfo.imageLinks.thumbnail}} />
+     {/* <Image  style={styles.logo} source={{uri:ele.volumeInfo.imageLinks.thumbnail}} /> */}
   <Text style={styles.title}   onPress={()=>navigation.navigate("details" ,{"obj":ele})} 
   >
   {ele.volumeInfo.title}

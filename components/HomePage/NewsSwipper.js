@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState ,useEffect} from "react"
-import { SectionList, StatusBar } from "react-native";
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View,Image,FlatList,ScrollView} from "react-native"
-import { Button } from "react-native-elements";
-import { Card } from "@rneui/themed"
+import { Card } from "@rneui/themed";
+import { Linking } from 'react-native';
+
 
 const NewsItems=({item})=>{
   
@@ -27,10 +27,10 @@ const NewsItems=({item})=>{
             {NewsData.map((singleNews)=>{
                 return<view style={{width:'410px',height:'100%'}}>     
                     
-                <Card style={{width:'410px',height:'100%'}} >
+                <Card style={{width:'410px',height:'100%'}}    >
                 
                <view>
-                    <Card.Title style={styles.NewsText}>
+                    <Card.Title style={styles.NewsText}  onPress={() => Linking.openURL(singleNews.url)}  >
                     {singleNews.title}
                     </Card.Title ></view>
                     <Card.Divider style={{backgroundColor:'black'}}/>

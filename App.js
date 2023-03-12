@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+<<<<<<< HEAD
 import { Icon } from '@rneui/themed';
 import { Button, IconButton } from 'react-native-paper';
 import { useEffect } from 'react';
@@ -16,6 +17,8 @@ import Page1 from './components/veiwcourses/Sign_up/SignUp';
 import test from './components/veiwcourses/Sign_up/testing';
 import Login from './components/veiwcourses/login';
 import NativeComponentEmailInput from './components/veiwcourses/Sign_up/testing';
+=======
+>>>>>>> main
 
 export default function App() {
   const Tab = createBottomTabNavigator();
