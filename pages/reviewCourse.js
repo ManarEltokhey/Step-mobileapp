@@ -1,4 +1,5 @@
 import React from 'react';
+import { ScrollView } from 'react-native';
 import {
   View,
   StyleSheet
@@ -10,10 +11,12 @@ const ReviewCourse =()=>{
 
     return(
         <>
+  <ScrollView>
         <View style={{marginRight:'10px',marginLeft:'10px'}}>
         <HeaderSection/>
         <AboutCourse/>
         </View>
+        </ScrollView>
                </>
     )
 }

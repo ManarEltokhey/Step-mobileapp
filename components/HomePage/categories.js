@@ -13,19 +13,19 @@ import { COLORS,SIZES } from './constracts';
 let categories = [
   {
     title: 'Mathematics',
-     image: require('../../assets/cate2.jpg'),
+     image: require('../../assets/Math.jpg'),
   },
   {
     title: 'Mental skills',
-     image: require('../../assets/cate1.jpg'),
+     image: require('../../assets/MS.jpg'),
   },
   {
     title: 'Techaning strategy',
-     image: require('../../assets/cate2.jpg'),
+     image: require('../../assets/TS2.jpg'),
   },
   {
     title: 'Science',
-     image: require('../../assets/cate1.jpg'),
+     image: require('../../assets/SC.jpg'),
   },
 ];
 

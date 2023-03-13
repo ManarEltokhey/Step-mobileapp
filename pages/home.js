@@ -23,14 +23,14 @@ const HomeSection =()=>{
         <>
        <ScrollView>
         <View style={{width:'100%',backgroundColor:'white'}}>
-         {/* <CarouselSection/>  
+         <CarouselSection/>  
         <Aboutus/>
         <View style={{height:'470px',backgroundColor:'white'}}>
        <ExerciseHomeScreen/></View>
        <View style={{height:'400px',backgroundColor:'white'}}>
        <CourseSwiper/></View>
-       <NewsItems style={{backgroundColor:'white'}}/> */}
-       <ReviewCourse/>
+       <NewsItems style={{backgroundColor:'white'}}/>
+
         </View>
         
         </ScrollView>
