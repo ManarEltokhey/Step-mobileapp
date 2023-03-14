@@ -18,6 +18,8 @@ import test from './components/veiwcourses/Sign_up/testing';
 import Login from './components/veiwcourses/login';
 import NativeComponentEmailInput from './components/veiwcourses/Sign_up/testing';
 import ReviewCourse from './pages/reviewCourse';
+import ViewCourses from './components/veiwcourses/ViewCourse';
+import ViewBooks from './components/veiwcourses/ViewBook';
 
 
 export default function App() {
@@ -71,6 +73,22 @@ export default function App() {
           <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
         ),
       }}/>
+  <Tab.Screen name="viewCourses" component={ViewCourses} options={{
+    tabBarLabel: '',
+    //  tabBarBadge: '' ,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
+        ),
+      }}/>
+      <Tab.Screen name="ViewBook" component={ViewBooks} options={{
+    tabBarLabel: '',
+    //  tabBarBadge: '' ,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
+        ),
+      }}/>
+      
+  
    
   </Tab.Navigator></NavigationContainer></Provider>
   );
