@@ -2,7 +2,7 @@ import React, { useReducer, useState } from "react";
 import { Button, Text, TextInput, View } from "react-native";
 import { colors } from "react-native-elements";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+ import { auth } from "../config.js";
 import { Link } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 function Login(){
