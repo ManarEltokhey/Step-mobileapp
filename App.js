@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import DETAILS from './components/veiwcourses/details';
 import FAVOURITE from './components/veiwcourses/favourite';
-import LOGIN from './components/veiwcourses/login';
 import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
@@ -20,15 +19,20 @@ import NativeComponentEmailInput from './components/veiwcourses/Sign_up/testing'
 import ReviewCourse from './pages/reviewCourse';
 import ViewCourses from './components/veiwcourses/ViewCourse';
 import ViewBooks from './components/veiwcourses/ViewBook';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import CategorySection from './components/category/Categoury';
 
 
 export default function App() {
-  const Tab = createBottomTabNavigator();
+   const Tab = createBottomTabNavigator();
+  // const Drawer=createDrawerNavigator();
   return (
     <Provider store={store}>
     <NavigationContainer >
-      
-    <Tab.Navigator>
+{/* <Drawer.Navigator>
+  <Drawer.Screen name='HomePage' component={HomeSection}/>
+</Drawer.Navigator> */}
+     <Tab.Navigator>
    
   <Tab.Screen name="HomePage" component={HomeSection} options={{
     tabBarLabel: '',
@@ -60,7 +64,7 @@ export default function App() {
           <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
         ),
       }}/> */}
-      <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
+       <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
@@ -87,10 +91,18 @@ export default function App() {
           <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
         ),
       }}/>
+      <Tab.Screen name="category" component={CategorySection} options={{
+    tabBarLabel: '',
+    //  tabBarBadge: '' ,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
+        ),
+      }}/>
       
   
    
-  </Tab.Navigator></NavigationContainer></Provider>
+  </Tab.Navigator> 
+  </NavigationContainer></Provider>
   );
 }
 

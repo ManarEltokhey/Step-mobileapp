@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react"
-import { Text, View, Image } from "react-native";
+import { Text, View, Image,Linking } from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LineSection from "./Line.js";
 import reviewCourse from "./reviewCourseStyle.js";
@@ -61,11 +61,11 @@ setcourses(courses)
 
 
 
-console.log(courses)
+//console.log(courses)
 
   return (
     <>
-      {courses.map((Course) => {
+      {/* {courses.map((Course) => {
 
         return <View style={{ width: '410px', height: '100%' }}>
 
@@ -82,16 +82,28 @@ console.log(courses)
 
       }
 
-      )}
+      )} */}
+ {courses.map((Course) => {
 
-
-      {/* <View>
+return<>
+<View>
+            <Image source={Course.courseImage} style={reviewCourse.CourseImage}/> 
+            <Text style={reviewCourse.CourseName}>{Course.courseName}</Text>
+            <LineSection/>
+            {/* <View style={reviewCourse.AboutNav}>
+                <View><Text onPress={() =>Linking.openURL('/about')}>About</Text></View>
+                <View><Text>Review</Text></View>
+                <View><Text>Instructor</Text></View>
+            </View> */}
+            {/* <LineSection/> */}
+        </View>
+<View>
             
-                <Text style={reviewCourse.Aboutsection}>About this Course</Text>
-                <Text style={reviewCourse.Aboutparagraphs}>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Text>
+                <Text style={reviewCourse.Aboutsection} id='about'>About this Course</Text>
+                <Text style={reviewCourse.Aboutparagraphs}>{Course.courseDescription}</Text>
                <LineSection/>
-                <Text style={reviewCourse.Aboutsection}>About this Course</Text>
-                <Text style={reviewCourse.Aboutparagraphs}>Manar Ahmed</Text>
+                <Text style={reviewCourse.Aboutsection}>Instructor</Text>
+                <Text style={reviewCourse.Aboutparagraphs}>{Course.courseCreator}</Text>
                 <LineSection/>
                 <Card>
                <Card.Title style={reviewCourse.Aboutsection}>Offerd By</Card.Title>
@@ -103,16 +115,17 @@ console.log(courses)
                <Text style={{ marginBottom: 10 }}>
                We train, qualify and enable the teacher to teach the new curriculum edu 2.0 by providing the teacher with courses, books and articles by experts in the field and also professional curriculums through our platform that will be always available for him. and give him certificates by the end of each course that will be added points to give him rewards and boosters
                </Text>
-             </Card> */}
-
-      {/* </View> */}
+             </Card> </View> </>
 
 
+}
 
+)}
 
 
 
     </>
+    
   )
 }
 export default AboutCourse;

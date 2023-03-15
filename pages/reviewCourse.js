@@ -11,9 +11,9 @@ const ReviewCourse =()=>{
 
     return(
         <>
-  <ScrollView>
+  <ScrollView  style={{width:'100%',backgroundColor:'white'}}>
         <View style={{marginRight:'10px',marginLeft:'10px'}}>
-        <HeaderSection/>
+        {/* <HeaderSection/> */}
         <AboutCourse/>
         </View>
         </ScrollView>

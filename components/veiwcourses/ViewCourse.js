@@ -1,23 +1,55 @@
 import { Card } from "@rneui/themed";
-import React from "react"
-import {Text, View ,Image} from "react-native";
+import React, { useEffect, useState } from "react"
+import {Text, View ,Image, ScrollView} from "react-native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ViewCoursess from "./ViewCoursesStyle.js";
+import { collection, doc, getDocs ,addDoc, QuerySnapshot } from "firebase/firestore";
+import {firebase} from "../config.js";
 const ViewCourses=()=>{
-  
+    
+const [courses ,setcourses]=useState([])
+const courseRef =firebase.firestore().collection("courses")
+useEffect( async ()=>{
+courseRef
+.onSnapshot(
+  querySnapshot =>{
+    const courses=[]
+querySnapshot.forEach(doc => {
+  const all=doc.data()
+  courses.push(
+   all
+  )
+});
+ 
+setcourses(courses)
+}
+)  
+}
+
+,[])
+
     return(
         <> 
+        <ScrollView  style={{width:'100%',backgroundColor:'white'}}>
+        {courses.map((Course) => {
+
+return<>
    <Card>
-               <Card.Title style={ViewCoursess.ViewCourseTiltle} >CourseName</Card.Title>
+               <Card.Title style={ViewCoursess.ViewCourseTiltle} >{Course.courseName}</Card.Title>
                <Card.Divider />
                <Card.Image
                  style={{ padding: 0 ,justifyContent:'center'}}
-                  source={require('../../assets/Math.jpg')}
+                  source={Course.courseImage}
                />
                <Text style={ViewCoursess.ViewCourseDescription}>
-               We train, qualify and enable the teacher to teach the new curriculum edu 2.0 by providing the teacher with courses, books and articles by experts in the field and also professional curriculums through our platform that will be always available for him. and give him certificates by the end of each course that will be added points to give him rewards and boosters
+               {Course.courseDescription}
                </Text>
              </Card>
+             </>
+             }
+
+             )}
+             </ScrollView>
         </>
     )
 }
