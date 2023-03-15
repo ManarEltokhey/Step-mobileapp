@@ -8,8 +8,9 @@ CourseImage:{
 CourseName:{
     color: '#010149' ,
     fontWeight:'bold',
-    fontSize:'30px',
-    marginTop:'5px'
+    fontSize:'27px',
+    marginTop:'8px',
+    width:'100%'
 },
 Line:{
     height:'2px',

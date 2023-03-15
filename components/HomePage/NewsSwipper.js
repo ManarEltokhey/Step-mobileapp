@@ -25,23 +25,23 @@ const NewsItems=({item})=>{
         scrollIndicatorInsets={true}>
         
             {NewsData.map((singleNews)=>{
-                return<view style={{width:'410px',height:'100%'}}>     
+                return<View style={{width:'410px',height:'100%'}}>     
                     
                 <Card style={{width:'410px',height:'100%'}}    >
                 
-               <view>
+               <View>
                     <Card.Title style={styles.NewsText}  onPress={() => Linking.openURL(singleNews.url)}  >
                     {singleNews.title}
-                    </Card.Title ></view>
+                    </Card.Title ></View>
                     <Card.Divider style={{backgroundColor:'black'}}/>
                     
-                    <view style={styles.NewsPhoto}> 
+                    <View style={styles.NewsPhoto}> 
                         
-                     <Card.Image source={singleNews.urlToImage}/></view>
+                     <Card.Image source={singleNews.urlToImage}/></View>
                     <Text style={styles.NewsDetails}>{singleNews.description}</Text>
                       </Card>
                     
-                </view>
+                </View>
                
                 
                
@@ -58,7 +58,7 @@ export default NewsItems
 const styles = StyleSheet.create({
    NewsHeader: {
       fontWeight: 'bold',
-      fontSize:'20px',
+      fontSize:'30px',
       color: '#010149',
       marginTop: 20,
       marginBottom: 5,

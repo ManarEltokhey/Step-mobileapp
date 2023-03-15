@@ -14,7 +14,8 @@ import ExerciseHomeScreen from '../components/HomePage/categories';
 import CourseSwiper from '../components/HomePage/CourseSwiper';
 import NewsItems from '../components/HomePage/NewsSwipper';
 import CarouselSection from '../components/HomePage/carousel';
-import ReviewCourse from './reviewCourse';
+
+
 
 
 const HomeSection =()=>{
@@ -32,6 +33,7 @@ const HomeSection =()=>{
        <NewsItems style={{backgroundColor:'white'}}/>
 
         </View>
+       
         
         </ScrollView>
        

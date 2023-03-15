@@ -62,7 +62,7 @@ const ExerciseHomeScreen = () => {
 
   return (
     <SafeAreaView style={{flex: 1,position:'relative'}}>
-      <Text style={{marginTop: 20, textAlign: 'center', fontSize: 30,color:'#010149'}}>Top categories</Text>
+      <Text style={{marginTop: 20, textAlign: 'center', fontSize: 30,color:'#010149',fontWeight:'bold'}}>Top categories</Text>
         <View
           style={{
             flexDirection: 'row',

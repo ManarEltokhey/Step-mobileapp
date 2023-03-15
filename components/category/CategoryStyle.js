@@ -7,7 +7,7 @@ export default StyleSheet.create({
       width:'700px',
     resizeMode:'stretch'
   },
- ViewCourseTiltle:{
+ ViewCategoryTiltle:{
     // shadowColor:' rgb(91, 85, 85)',
     color: '#010149' ,
     fontWeight:'bold',
@@ -18,11 +18,12 @@ export default StyleSheet.create({
     shadowRadius: 3,
     width:'100%'
  },
- ViewCourseDescription:{
+ ViewCategoryDescription:{
     color:'black',
    marginTop:'10px',
    marginBottom:'5px',
-   fontSize:'20px'
+   fontSize:'20px',
+   textAlign:'center'
  }
   
 })
