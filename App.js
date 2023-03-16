@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { Icon } from '@rneui/themed';
 import { Button, IconButton } from 'react-native-paper';
 import { useEffect } from 'react';
@@ -20,21 +19,62 @@ import ReviewCourse from './pages/reviewCourse';
 import ViewCourses from './components/veiwcourses/ViewCourse';
 import ViewBooks from './components/veiwcourses/ViewBook';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import 'react-native-gesture-handler';
 import CategorySection from './components/category/Categoury';
-
-
+const Drawer=createDrawerNavigator()
+const Tab = createBottomTabNavigator();
+function DrawerNav(){
+ return(
+   
+  <Tab.Navigator>
+  <Tab.Screen name="HomePage" component= {HomeSection} options={{
+    tabBarLabel: '',
+    headerShown:false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={'#010149'} size={size} />
+        ),
+      }}/>
+       <Tab.Screen name="home" component={LIST} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="book" color={'#010149'} size={size} />
+        ),
+      }}/>
+       <Tab.Screen name="register" component={Page1} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+           <MaterialCommunityIcons name="inbox" color={'#010149'} size={size} />
+        ),
+      }}/>
+       <Tab.Screen name="login" component={Login} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+           <MaterialCommunityIcons name="login" color={'#010149'} size={size} />
+        ),
+      }}/>
+       <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
+    tabBarLabel: '',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
+        ),
+      }}/>
+      </Tab.Navigator>
+   )
+}
 export default function App() {
-   const Tab = createBottomTabNavigator();
-  // const Drawer=createDrawerNavigator();
+  
+ 
   return (
     <Provider store={store}>
     <NavigationContainer >
-{/* <Drawer.Navigator>
-  <Drawer.Screen name='HomePage' component={HomeSection}/>
-</Drawer.Navigator> */}
-     <Tab.Navigator>
+    <Drawer.Navigator>
+  <Drawer.Screen name="HomePage" component={DrawerNav} />
+  <Drawer.Screen name='List' component={LIST}/>
+  <Drawer.Screen name='register' component={Page1}/>
+ </Drawer.Navigator>
+     {/* <Tab.Navigator>
    
-  <Tab.Screen name="HomePage" component={HomeSection} options={{
+  <Tab.Screen name="HomePage" component= {DrawerNav} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={'#010149'} size={size} />
@@ -58,12 +98,7 @@ export default function App() {
            <MaterialCommunityIcons name="login" color={'#010149'} size={size} />
         ),
       }}/>
-      {/* <Tab.Screen name="details" component={DETAILS} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
-        ),
-      }}/> */}
+     
        <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
@@ -101,7 +136,7 @@ export default function App() {
       
   
    
-  </Tab.Navigator> 
+  </Tab.Navigator>  */}
   </NavigationContainer></Provider>
   );
 }
