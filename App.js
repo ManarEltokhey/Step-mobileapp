@@ -34,18 +34,14 @@ function DrawerNav(){
           <MaterialCommunityIcons name="home" color={'#010149'} size={size} />
         ),
       }}/>
-       <Tab.Screen name="home" component={LIST} options={{
+      <Tab.Screen name="favourite" component={FAVOURITE} options={{
     tabBarLabel: '',
+    //  tabBarBadge: '' ,
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="book" color={'#010149'} size={size} />
+          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
         ),
       }}/>
-       <Tab.Screen name="register" component={Page1} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-           <MaterialCommunityIcons name="inbox" color={'#010149'} size={size} />
-        ),
-      }}/>
+       
        <Tab.Screen name="login" component={Login} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
@@ -58,7 +54,10 @@ function DrawerNav(){
           <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
         ),
       }}/>
+      
+       
       </Tab.Navigator>
+      
    )
 }
 export default function App() {
@@ -68,75 +67,10 @@ export default function App() {
     <Provider store={store}>
     <NavigationContainer >
     <Drawer.Navigator>
-  <Drawer.Screen name="HomePage" component={DrawerNav} />
-  <Drawer.Screen name='List' component={LIST}/>
-  <Drawer.Screen name='register' component={Page1}/>
+    <Drawer.Screen name="HomePage" component={DrawerNav} />
+  <Drawer.Screen name='Register' component={Page1}/>
+  <Drawer.Screen name="Category" component={CategorySection}/>
  </Drawer.Navigator>
-     {/* <Tab.Navigator>
-   
-  <Tab.Screen name="HomePage" component= {DrawerNav} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="home" color={'#010149'} size={size} />
-        ),
-      }}/>
-      <Tab.Screen name="home" component={LIST} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="book" color={'#010149'} size={size} />
-        ),
-      }}/>
-      <Tab.Screen name="register" component={Page1} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-           <MaterialCommunityIcons name="inbox" color={'#010149'} size={size} />
-        ),
-      }}/>
-        <Tab.Screen name="login" component={Login} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-           <MaterialCommunityIcons name="login" color={'#010149'} size={size} />
-        ),
-      }}/>
-     
-       <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
-    tabBarLabel: '',
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
-        ),
-      }}/>
-      <Tab.Screen name="favourite" component={FAVOURITE} options={{
-    tabBarLabel: '',
-    //  tabBarBadge: '' ,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
-        ),
-      }}/>
-  <Tab.Screen name="viewCourses" component={ViewCourses} options={{
-    tabBarLabel: '',
-    //  tabBarBadge: '' ,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
-        ),
-      }}/>
-      <Tab.Screen name="ViewBook" component={ViewBooks} options={{
-    tabBarLabel: '',
-    //  tabBarBadge: '' ,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
-        ),
-      }}/>
-      <Tab.Screen name="category" component={CategorySection} options={{
-    tabBarLabel: '',
-    //  tabBarBadge: '' ,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="heart" color={'#010149'} size={size} />
-        ),
-      }}/>
-      
-  
-   
-  </Tab.Navigator>  */}
   </NavigationContainer></Provider>
   );
 }
