@@ -214,10 +214,13 @@ const FormSteps = (props) => {
       <View style={styles.bodyBtn}>
       {step > 1 &&<View style={{width:"50%",justifyContent:"space-around",margin:5}}><Button title="Back"   onPress={goBack}></Button></View> }
       {step < 3 && step >= 1 && <View style={{width:"50%",justifyContent:"space-around" ,margin:5}}><Button title="Next"style={styles.bodyBtn}  onPress={goNext}>next</Button></View>}
+      
       </View>
+      {step==3&&
       <Button title="submit" color={"#13005A"} onPress={props.handleSubmit}>
         Submit
       </Button>
+       }
     </>
   );
 };
