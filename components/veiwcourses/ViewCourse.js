@@ -7,7 +7,7 @@ import { collection, doc, getDocs ,addDoc, QuerySnapshot } from "firebase/firest
 import {firebase} from "../config.js";
 const ViewCourses=({navigation,route})=>{
   var Course ="";
-  Course=   route.params.obj.volumeInfo ;
+  Course=   route.params.obj ;
 const [courses ,setcourses]=useState([])
 const courseRef =firebase.firestore().collection("courses")
 useEffect( async ()=>{
@@ -38,7 +38,7 @@ var  coursescategory=courses.filter(itm=>itm.courseCategory==Course)
 
 return<>
    <Card>
-               <Card.Title style={ViewCoursess.ViewCourseTiltle} >{Course.courseName}</Card.Title>
+               <Card.Title style={ViewCoursess.ViewCourseTiltle} onPress={()=>navigation.navigate("PreviewCourse" ,{"obj":Course})}>{Course.courseName}</Card.Title>
                <Card.Divider />
                <Card.Image
                  style={{ padding: 0 ,justifyContent:'center'}}

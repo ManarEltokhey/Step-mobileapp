@@ -68,10 +68,8 @@ export default function App() {
 
   <Drawer.Screen name="HomePage" component={DrawerNav} />
   <Drawer.Screen name='register' component={Page1}/>
-  <Drawer.Screen name='FAVOURITE' component={FAVOURITE}/>
   <Drawer.Screen name='Category' component={CategorySection}/>
   <Drawer.Screen name='ViewCourses' component={ViewCourses}  options={{ title: '' }}/>
-  <Drawer.Screen name='details' component={DETAILS}   options={{ title: '' }}/>
   <Drawer.Screen name='List' component={LIST}  options={{ title: '' }}/>
 
  </Drawer.Navigator>

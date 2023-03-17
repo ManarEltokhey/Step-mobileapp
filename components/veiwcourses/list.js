@@ -10,7 +10,7 @@ import  Count, { addtofav ,deletefav} from "../../store/Action";
 
 export default function LIST({navigation,route}){
   var Book ="";
-  Book=   route.params.obj.volumeInfo ;
+  Book=   route.params.obj ;
 
     const [books ,setBooks]=useState([])
     const bookRef =firebase.firestore().collection("books")
@@ -57,7 +57,7 @@ else  {
     <ScrollView>
 
     <Text style={{fontSize:30 ,width:100 ,margin:"auto" }}> {dataa} 
-    <Icon name= "star"  size={30} color="red" style={{margin:"auto"} } />
+    <Icon name= "star"  size={30} color="#010149" style={{margin:"auto"} } />
      </Text>
         
 
@@ -75,8 +75,8 @@ else  {
                />
              <View style={{justifyContent:'center',alignItems:'center'}}>
              {
-   Book.isselect=="star"&& arrfav.find(e=>e.id==Book.id) ?   <Icon name= "star"  size={30} color="red"  style={{margin:"auto"} } onPress={(e)=>handelcount(Book)}/>
-   :   <Icon name= "star-o"  size={30} color="red"   style={{margin:"auto"} } onPress={()=>handelcount(Book)}/>
+   Book.isselect=="star"&& arrfav.find(e=>e.id==Book.id) ?   <Icon name= "star"  size={30} color="#010149"  style={{margin:"auto"} } onPress={(e)=>handelcount(Book)}/>
+   :   <Icon name= "star-o"  size={30} color="#010149"   style={{margin:"auto"} } onPress={()=>handelcount(Book)}/>
 }
 
               </View>

@@ -30,7 +30,7 @@ return<>
                <Text style={categoryStyle.ViewCategoryDescription}>
                {Category.count} Courses
                </Text>
-         <View style={{flex:1}}>
+         <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
 
          <Button
          onPress={()=>navigation.navigate("List" ,{"obj":Category.id})} 

@@ -5,7 +5,7 @@ import ViewBookss from "./ViewBookStyle.js";
 
 export default function DETAILS({navigation,route}){
     var Book ="";
-    Book=   route.params.obj.volumeInfo ;
+    Book=   route.params.obj ;
 
     return(<>
     

@@ -7,14 +7,15 @@ import {
 import AboutCourse from '../components/reviewCourse/AboutCourse';
 import HeaderSection from '../components/reviewCourse/header';
 
-const ReviewCourse =()=>{
-
+const ReviewCourse =({navigation,route})=>{
+  var Course ="";
+  Course=   route.params.obj ;
     return(
         <>
   <ScrollView  style={{width:'100%',backgroundColor:'white'}}>
         <View style={{marginRight:'10px',marginLeft:'10px'}}>
         {/* <HeaderSection/> */}
-        <AboutCourse/>
+        <AboutCourse Course={Course}/>
         </View>
         </ScrollView>
                </>
