@@ -46,12 +46,12 @@ function DrawerNav(){
            <MaterialCommunityIcons name="login" color={'#010149'} size={size} />
         ),
       }}/>
-       <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
+       {/* <Tab.Screen name="PreviewCourse" component={ReviewCourse} options={{
     tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="bookmark" color={'#010149'} size={size} />
         ),
-      }}/>
+      }}/> */}
       
        
       </Tab.Navigator>
@@ -69,6 +69,7 @@ export default function App() {
   <Drawer.Screen name="HomePage" component={DrawerNav} />
   <Drawer.Screen name='register' component={Page1}/>
   <Drawer.Screen name='Category' component={CategorySection}/>
+  <Drawer.Screen name='PreviewCourse' component={ReviewCourse} options={{ title: '' }}/>
   <Drawer.Screen name='ViewCourses' component={ViewCourses}  options={{ title: '' }}/>
   <Drawer.Screen name='List' component={LIST}  options={{ title: '' }}/>
 

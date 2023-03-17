@@ -27,9 +27,9 @@ return<>
                  style={{ padding: 0 ,justifyContent:'center',resizeMode:'stretch'}}
                 source={Category.image}
                />
-               <Text style={categoryStyle.ViewCategoryDescription}>
+               {/* <Text style={categoryStyle.ViewCategoryDescription}>
                {Category.count} Courses
-               </Text>
+               </Text> */}
          <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
 
          <Button
