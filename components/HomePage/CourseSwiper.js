@@ -1,10 +1,8 @@
 import React, { useState ,useEffect} from "react"
-import { SectionList, StatusBar } from "react-native";
 import {SafeAreaView, StyleSheet, Text, TouchableOpacity, View,Image,FlatList,ScrollView} from "react-native"
 import { Card } from "@rneui/themed";
 import { Button } from "react-native-elements";
 import {firebase} from "../config.js";
-import { collection, doc, getDocs ,addDoc, QuerySnapshot } from "firebase/firestore";
 import aboutStyle from "./aboutUsStyle.js";
 const ListItem=()=>{
 const [courses ,setcourses]=useState([])

@@ -5,8 +5,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ViewCoursess from "./ViewCoursesStyle.js";
 import { collection, doc, getDocs ,addDoc, QuerySnapshot } from "firebase/firestore";
 import {firebase} from "../config.js";
-const ViewCourses=()=>{
-    
+const ViewCourses=({navigation,route})=>{
+  var Course ="";
+  Course=   route.params.obj.volumeInfo ;
 const [courses ,setcourses]=useState([])
 const courseRef =firebase.firestore().collection("courses")
 useEffect( async ()=>{
@@ -28,10 +29,12 @@ setcourses(courses)
 
 ,[])
 
+var  coursescategory=courses.filter(itm=>itm.courseCategory==Course)
+
     return(
         <> 
         <ScrollView  style={{width:'100%',backgroundColor:'white'}}>
-        {courses.map((Course) => {
+        {coursescategory.map((Course) => {
 
 return<>
    <Card>
