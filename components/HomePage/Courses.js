@@ -7,40 +7,6 @@ import DataList from "./Data";
 
 const CoursrsSection =()=>{
   
-
-// const images = [
-//   "https://cdn.elearningindustry.com/wp-content/uploads/2021/08/Top-5-Benefits-Of-eLearning-Education.png",
-//   "https://cdn.elearningindustry.com/wp-content/uploads/2021/08/Top-5-Benefits-Of-eLearning-Education.png",
-//   "https://cdn.elearningindustry.com/wp-content/uploads/2021/08/Top-5-Benefits-Of-eLearning-Education.png"
-// ];
-
-
-//     return(
-//       <>
-//       <TouchableOpacity>
-// <View style={{...styles.cardView,width:ScreenWidth}}>
-// <Image
-// source={{uri:'https://cdn.elearningindustry.com/wp-content/uploads/2021/08/Top-5-Benefits-Of-eLearning-Education.png'}}
-// // source={{uri:images}}
-// style={{...styles.image,width:ScreenWidth}}
-// />
-// </View>
-// <View>
-//   <View>
-//     <Text style={styles.courseName}>
-//       hhhhh
-//     </Text>
-//   </View>
-//   <View style={{flex:1,flexDirection:'row'}}>
-//     <Button>
-//       Enroll Now
-//     </Button>
-//   </View>
-// </View>
-//       </TouchableOpacity>
-      
-//       </>
-//     )
 const data=[
   '#FF6633',
   '#FFB399',
@@ -52,16 +18,7 @@ const data=[
   '#FFB399',
 
 ]
-// const [courseData, setData] = useState(
-//       [
-//           {imgSrc:course1,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//           {imgSrc:cate2,Details:'is simply dummy text of the printing and typesetting industry.' ,title:'course1' },
-//           {imgSrc:course1,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//           {imgSrc:cate2,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//           {imgSrc:course1,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//           {imgSrc:cate2,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//           {imgSrc:course1,Details:'is simply dummy text of the printing and typesetting industry. ' ,title:'course1' },
-//       ])
+
 return(
   <>
   <SafeAreaView style={{width:'100%'}}>

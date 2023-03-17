@@ -5,7 +5,7 @@ import ViewBookss from "./ViewBookStyle.js";
 import { Button } from "react-native-elements";
 import {firebase} from "../config.js";
 import { collection, doc, getDocs ,addDoc, QuerySnapshot } from "firebase/firestore";
-const ViewBooks=()=>{
+const ViewBooks=({navigation,route})=>{
   const [books ,setBooks]=useState([])
 const bookRef =firebase.firestore().collection("books")
 useEffect( async ()=>{

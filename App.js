@@ -8,17 +8,15 @@ import { Provider } from 'react-redux';
 import { store } from './store/Store';
 import LIST from './components/veiwcourses/list';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Icon } from '@rneui/themed';
-import { Button, IconButton } from 'react-native-paper';
-import { useEffect } from 'react';
+
 import Page1 from './components/veiwcourses/Sign_up/SignUp';
-import test from './components/veiwcourses/Sign_up/testing';
 import Login from './components/veiwcourses/login';
 import NativeComponentEmailInput from './components/veiwcourses/Sign_up/testing';
 import ReviewCourse from './pages/reviewCourse';
 import ViewCourses from './components/veiwcourses/ViewCourse';
 import ViewBooks from './components/veiwcourses/ViewBook';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+
 import 'react-native-gesture-handler';
 import CategorySection from './components/category/Categoury';
 const Drawer=createDrawerNavigator()
@@ -67,9 +65,15 @@ export default function App() {
     <Provider store={store}>
     <NavigationContainer >
     <Drawer.Navigator>
-    <Drawer.Screen name="HomePage" component={DrawerNav} />
-  <Drawer.Screen name='Register' component={Page1}/>
-  <Drawer.Screen name="Category" component={CategorySection}/>
+
+  <Drawer.Screen name="HomePage" component={DrawerNav} />
+  <Drawer.Screen name='register' component={Page1}/>
+  <Drawer.Screen name='FAVOURITE' component={FAVOURITE}/>
+  <Drawer.Screen name='Category' component={CategorySection}/>
+  <Drawer.Screen name='ViewCourses' component={ViewCourses}  options={{ title: '' }}/>
+  <Drawer.Screen name='details' component={DETAILS}   options={{ title: '' }}/>
+  <Drawer.Screen name='List' component={LIST}  options={{ title: '' }}/>
+
  </Drawer.Navigator>
   </NavigationContainer></Provider>
   );
